@@ -17,11 +17,54 @@
 
     <!-- Main Screen -->
     <div class="mainSection">
+
+        <section class="MainBox">
+
+        <div class="sheet">
+            <div class="sheetbox1">
+                <h1>Total Balance</h1>
+                <span class="TotalBalance" id="balance">₹ 0.00</span>
+            </div>
+            <div class="sheetBox2">
+                <div class="sheetbox1">
+                    <h2>Income</h2>
+                    <span class="TotalBalance" id="income">+ ₹ 0.00</span>
+                </div>
+                <div class="sheetbox1">
+                    <h2>Expense</h2>
+                    <span class="TotalBalance" id="expense">- ₹ 0.00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="calendar">
+            <div class="month">
+                <div class="prev">&#10094;</div>
+                <div class="month-name" id="month-name"></div>
+                <div class="next">&#10095;</div>
+            </div>
+            <div class="weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class="days" id="days"></div>
+        </div>
+
+        </section>
+        
+        
         <div class="bar">
             <div id="incomeBtn" class="navButton">Income</div>
             <div id="expenseBtn" class="navButton">Expense</div>
             <div id="transactionsBtn" class="navButton">Transactions</div>
         </div>
+        
+
         <div id="incomeDiv" class="contentDiv">
             Income
         </div>
