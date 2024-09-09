@@ -1,0 +1,102 @@
+
+body{
+    margin: 0;
+    padding: 0;
+}
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+/*
+COLOURS
+#0d1b2a
+#1b263b
+#415a77
+#778da9
+#e0e1dd
+--------
+*/
+
+/*  ---   Header   ---*/
+
+.header{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    background-color: #1b263b;
+    color: #e0e1dd;
+    padding: 10px 15px;
+    font-size: 25px;
+    gap: 0px 10px;
+    font-weight: 400;
+}
+
+.header_icon{
+    display: flex;
+    align-items: center;
+}
+
+.mainSection{
+    height: 90vh;
+    padding: 5px;
+}
+
+/*  ---  Bar  --- */
+.bar{
+    display: flex;
+    justify-content: space-around;
+    background-color: #1b263b;
+    color: #e0e1dd;
+    width: fit-content;
+    margin: auto;
+    padding: 5px 20px;
+    border-radius: 10px;
+    gap: 0px 15px;
+    font-size: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 3px 2px 10px #0d1b2a;
+}
+
+@media (min-width: 1200px){
+    .bar{
+        padding: 10px 30px;
+        gap: 0px 20px;
+    }
+}
+
+/* Bar Action */
+.navButton {
+    padding: 4px 5px;
+    cursor: pointer;
+    background-color: #0d1b2a;
+    border-radius: 4px;
+    color: #e0e1dd;
+}
+
+.navButton:hover {
+    background-color: #153860;
+}
+
+.contentDiv {
+    color: black;
+}
+
+.Component{
+    background-color: #153860;
+    color: yellow;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Bar Action End */
