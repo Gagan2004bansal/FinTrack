@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FinTrack</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/style.css"> <!-- CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart JS -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
+
 <body>
 
     <!-- Header -->
@@ -20,62 +24,96 @@
 
         <section class="MainBox">
 
-        <div class="sheet">
-            <div class="sheetbox1">
-                <h1>Total Balance</h1>
-                <span class="TotalBalance" id="balance">₹ 0.00</span>
+            <div class="chart1">
+                <canvas id="myChart"></canvas>
             </div>
-            <div class="sheetBox2">
-                <div class="sheetbox1">
-                    <h2>Income</h2>
-                    <span class="TotalBalance" id="income">+ ₹ 0.00</span>
-                </div>
-                <div class="sheetbox1">
-                    <h2>Expense</h2>
-                    <span class="TotalBalance" id="expense">- ₹ 0.00</span>
-                </div>
-            </div>
-        </div>
 
-        <div class="calendar">
-            <div class="month">
-                <div class="prev">&#10094;</div>
-                <div class="month-name" id="month-name"></div>
-                <div class="next">&#10095;</div>
+            <div class="sheet">
+                <div class="sheetbox1">
+                    <div>Balance</div>
+                    <div class="TotalBalance" id="balance">₹ 0.00</div>
+                </div>
+                <div class="sheetbox2">
+                    <div>Income</div>
+                    <div class="TotalBalance" id="income">₹ 0.00</div>
+                </div>
+                <div class="sheetbox3">
+                    <div>Expense</div>
+                    <div class="TotalBalance" id="expense">₹ 0.00</div>
+                </div>
             </div>
-            <div class="weekdays">
-                <div>Sun</div>
-                <div>Mon</div>
-                <div>Tue</div>
-                <div>Wed</div>
-                <div>Thu</div>
-                <div>Fri</div>
-                <div>Sat</div>
-            </div>
-            <div class="days" id="days"></div>
-        </div>
-
         </section>
-        
-        
-        <div class="bar">
-            <div id="incomeBtn" class="navButton">Income</div>
-            <div id="expenseBtn" class="navButton">Expense</div>
-            <div id="transactionsBtn" class="navButton">Transactions</div>
-        </div>
-        
 
-        <div id="incomeDiv" class="contentDiv">
-            Income
-        </div>
-        <div id="expenseDiv" class="contentDiv hidden">
-            Expense
-        </div>
-        <div id="transactionsDiv" class="contentDiv hidden">
-            Transactions
+
+        <div>
+
+            <div class="bar">
+                <div id="incomeBtn" class="navButton">Income</div>
+                <div id="expenseBtn" class="navButton">Expense</div>
+                <div id="transactionsBtn" class="navButton">Transactions</div>
+            </div>
+
+
+            <div id="incomeDiv" class="contentDiv">
+                <section class="IncomeBox">
+                    <form class="incomeForm" id="transactionForm">
+                        <div class="flexBoxCol">
+                            <label for="name">Name</label>
+                            <input class="inputBox" type="text" placeholder="Name" name="name" required />
+                        </div>
+                        <div class="flexBoxCol">
+                            <label for="amount">Amount</label>
+                            <input class="inputBox" type="number" name="amount" value="0" min="0.01" step="0.01" required />
+                        </div>
+                        <div class="flexBoxCol">
+                            <label for="date">Date</label>
+                            <input class="inputBox" type="date" name="date" required />
+                        </div>
+                        <button type="submit" class="submitBtn">Add Income</button>
+                    </form>
+                </section>
+            </div>
+
+            <div id="expenseDiv" class="contentDiv hidden">
+                Expense
+            </div>
+            
+            <div id="transactionsDiv" class="contentDiv hidden">
+                <section>
+                    <h3>Transactions</h3>
+                    <ul id="transactionList"></ul>
+                    <div id="status"></div>
+                  </section>
+            </div>
         </div>
     </div>
 
+
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'polarArea',
+            data: {
+                labels: ['Blue', 'Red', 'Green'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+
     <script src="/js/main.js"></script>
 </body>
+
 </html>
