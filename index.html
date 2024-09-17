@@ -60,15 +60,15 @@
                     <form class="incomeForm" id="transactionForm">
                         <div class="flexBoxCol">
                             <label for="name">Name</label>
-                            <input class="inputBox" type="text" placeholder="Name" name="name" required />
+                            <input id="name" class="inputBox" type="text" placeholder="Name" name="name" required />
                         </div>
                         <div class="flexBoxCol">
                             <label for="amount">Amount</label>
-                            <input class="inputBox" type="number" name="amount" value="0" min="0.01" step="0.01" required />
+                            <input id="amount" class="inputBox" type="number" name="amount" value="0" min="0.01" step="0.01" required />
                         </div>
                         <div class="flexBoxCol">
                             <label for="date">Date</label>
-                            <input class="inputBox" type="date" name="date" required />
+                            <input id="date" class="inputBox" type="date" name="date" required />
                         </div>
                         <button type="submit" class="submitBtn">Add Income</button>
                     </form>
@@ -78,18 +78,18 @@
             <div id="expenseDiv" class="contentDiv hidden">
                 <section class="IncomeBox">
                     <h1 style="text-align: center;">Add Expense</h1>
-                    <form class="incomeForm" id="transactionForm">
+                    <form class="incomeForm" id="transactionForm1">
                         <div class="flexBoxCol">
                             <label for="name">Name</label>
-                            <input class="inputBox" type="text" placeholder="Name" name="name" required />
+                            <input id="name1" class="inputBox" type="text" placeholder="Name" name="name" required />
                         </div>
                         <div class="flexBoxCol">
                             <label for="amount">Amount</label>
-                            <input class="inputBox" type="number" name="amount" value="0" min="0.01" step="0.01" required />
+                            <input id="amount1" class="inputBox" type="number" name="amount" value="0" min="0.01" step="0.01" required />
                         </div>
                         <div class="flexBoxCol">
                             <label for="date">Date</label>
-                            <input class="inputBox" type="date" name="date" required />
+                            <input id="date1" class="inputBox" type="date" name="date" required />
                         </div>
                         <button type="submit" class="submitBtn">Add Expense</button>
                     </form>
