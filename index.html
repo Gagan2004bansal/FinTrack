@@ -24,10 +24,12 @@
 
         <section class="MainBox">
 
+            <!-- Chart -->
             <div class="chart1">
                 <canvas id="myChart"></canvas>
             </div>
 
+            <!-- Balance Box -->
             <div class="sheet">
                 <div class="sheetbox1">
                     <div>Balance</div>
@@ -47,6 +49,7 @@
 
         <div>
 
+            <!-- Bar -->
             <div class="bar">
                 <div id="incomeBtn" class="navButton">Income</div>
                 <div id="expenseBtn" class="navButton">Expense</div>
@@ -54,6 +57,7 @@
             </div>
 
 
+            <!-- Bar Form -->
             <div id="incomeDiv" class="contentDiv">
                 <section class="IncomeBox">
                     <h1 style="text-align: center;">Add Income</h1>
@@ -75,6 +79,7 @@
                 </section>
             </div>
 
+            <!-- Expense Form -->
             <div id="expenseDiv" class="contentDiv hidden">
                 <section class="IncomeBox">
                     <h1 style="text-align: center;">Add Expense</h1>
@@ -96,10 +101,11 @@
                 </section>
             </div>
             
+            <!-- Transaction -->
             <div id="transactionsDiv" class="contentDiv hidden">
-                <section>
-                    <h3 style="text-align: center;">Transactions</h3>
-                    <ul id="transactionList"></ul>
+                <section style="margin-top: 20px;">
+                    <h3 style="text-align: center">Transactions</h3>
+                    <div id="transactionList"></div>
                     <div id="status"></div>
                   </section>
             </div>
@@ -107,31 +113,7 @@
     </div>
 
 
-    <script>
-        const ctx = document.getElementById('myChart');
-
-        new Chart(ctx, {
-            type: 'polarArea',
-            data: {
-                labels: ['Blue', 'Red', 'Green'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script>
-
-
-    <script src="/js/main.js"></script>
+    <script src="/js/main.js"></script>  <!-- Javascript File -->
 </body>
 
 </html>

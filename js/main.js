@@ -102,13 +102,13 @@ function updateBalanceAndExpense(amount) {
     document.getElementById('balance').textContent = `₹ ${newBalance.toFixed(2)}`;
 }
 
+let totalIncome = 0;
+let totalExpense = 0;
+let totalBalance = 0;
+
 function initialize() {
     const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
     
-    let totalIncome = 0;
-    let totalExpense = 0;
-    let totalBalance = 0;
-
     transactions.forEach(transaction => {
         if (transaction.type === 'income') {
             totalIncome += transaction.amount;
@@ -122,6 +122,65 @@ function initialize() {
     document.getElementById('income').textContent = `₹ ${totalIncome.toFixed(2)}`;
     document.getElementById('expense').textContent = `₹ ${totalExpense.toFixed(2)}`;
     document.getElementById('balance').textContent = `₹ ${totalBalance.toFixed(2)}`;
+
+    initializeChart();
 }
 
+function initializeChart() {
+    const ctx = document.getElementById('myChart');
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Balance', 'Expense'],
+            datasets: [{
+                label: 'Financial Overview',
+                data: [totalBalance, totalExpense], 
+                backgroundColor: ['#4CAF50', '#FF5722', '#03A9F4'], 
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+            }
+        }
+    });
+}
+
+
+
 window.onload = initialize;
+
+
+function displayTransactions() {
+    const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+    const transactionList = document.getElementById('transactionList');
+    transactionList.innerHTML = ''; 
+
+    transactions.forEach((transaction, index) => {
+       
+        const transactionItem = document.createElement('div');
+        transactionItem.classList.add('transaction-item');
+
+        transactionItem.innerHTML = `
+            <div class="transDetail" >
+                <div>${transaction.name || 'Transaction ' + (index + 1)}</div>
+                <div>${transaction.date}</div>
+            </div>
+            <span class="${transaction.type === 'income' ? 'income' : 'expense'}">
+                ${transaction.type === 'income' ? '+' : '-'} ₹${transaction.amount.toFixed(2)}
+            </span>
+        `;
+
+      
+        transactionList.appendChild(transactionItem);
+    });
+}
+
+window.onload = function() {
+    initialize(); 
+    displayTransactions(); 
+};
