@@ -15,8 +15,14 @@
 
     <!-- Header -->
     <div class="header">
-        <div class="header_icon"><span class="material-symbols-outlined">all_inclusive</span></div>
-        <div>FinTrack</div>
+        <div class="HeaderBox">
+            <div class="header_icon"><span class="material-symbols-outlined">all_inclusive</span></div>
+            <div>FinTrack</div>
+        </div>
+        <div class="HeaderBox">
+            <div class="header_icon"><span class="material-symbols-outlined">account_circle</span></div>
+            <div id="userName"></div>
+        </div>
     </div>
 
     <!-- Main Screen -->
@@ -64,11 +70,13 @@
                     <form class="incomeForm" id="transactionForm">
                         <div class="flexBoxCol">
                             <label for="name">Income Name</label>
-                            <input id="name" class="inputBox" type="text" placeholder="Enter income name" name="name" required />
+                            <input id="name" class="inputBox" type="text" placeholder="Enter income name" name="name"
+                                required />
                         </div>
                         <div class="flexBoxCol">
                             <label for="amount">Amount</label>
-                            <input id="amount" class="inputBox" type="number" name="amount" value="0" min="0.01" step="0.01" required />
+                            <input id="amount" class="inputBox" type="number" name="amount" value="0" min="0.01"
+                                step="0.01" required />
                         </div>
                         <div class="flexBoxCol">
                             <label for="date">Date</label>
@@ -86,11 +94,13 @@
                     <form class="incomeForm" id="transactionForm1">
                         <div class="flexBoxCol">
                             <label for="name">Expense Name</label>
-                            <input id="name1" class="inputBox" type="text" placeholder="Enter expense name" name="name" required />
+                            <input id="name1" class="inputBox" type="text" placeholder="Enter expense name" name="name"
+                                required />
                         </div>
                         <div class="flexBoxCol">
                             <label for="amount">Amount</label>
-                            <input id="amount1" class="inputBox" type="number" name="amount" value="0" min="0.01" step="0.01" required />
+                            <input id="amount1" class="inputBox" type="number" name="amount" value="0" min="0.01"
+                                step="0.01" required />
                         </div>
                         <div class="flexBoxCol">
                             <label for="date">Date</label>
@@ -100,20 +110,20 @@
                     </form>
                 </section>
             </div>
-            
+
             <!-- Transaction -->
             <div id="transactionsDiv" class="contentDiv hidden">
                 <section style="margin-top: 20px;">
                     <h3 style="text-align: center">Transactions</h3>
                     <div id="transactionList"></div>
                     <div id="status"></div>
-                  </section>
+                </section>
             </div>
         </div>
     </div>
 
 
-    <script src="main.js"></script>  <!-- Javascript File -->
+    <script src="main.js"></script> <!-- Javascript File -->
 </body>
 
 </html>

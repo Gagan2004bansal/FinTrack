@@ -31,12 +31,19 @@ COLOURS
 .header {
     height: 10vh;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     background-color: #1b263b;
     color: #e0e1dd;
-    padding: 10px 15px;
-    font-size: 25px;
+    padding: 10px 25px;
+}
+
+.HeaderBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 0px 10px;
+    font-size: 25px;
     font-weight: 400;
 }
 

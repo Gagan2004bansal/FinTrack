@@ -156,6 +156,8 @@ window.onload = initialize;
 
 
 function displayTransactions() {
+    const name = localStorage.getItem('Name');
+    const username = document.getElementById('userName').textContent = name;
     const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
     const transactionList = document.getElementById('transactionList');
     transactionList.innerHTML = ''; 
@@ -184,3 +186,5 @@ window.onload = function() {
     initialize(); 
     displayTransactions(); 
 };
+
+
